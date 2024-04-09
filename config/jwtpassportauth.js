@@ -7,7 +7,7 @@ const passport = require("passport");
 const jwtpassport = () => {
   var opts = {};
   opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-  opts.secretOrKey = process.env.SECRET;
+  opts.secretOrKey = "asingomasingoiskamaraarumarasirumar";
   passport.use(
     new JwtStrategy(opts, function (jwt_payload, done) {
       //console.log(jwt_payload);
