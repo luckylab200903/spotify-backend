@@ -17,6 +17,7 @@ app.use("/api",songRoutes)
 app.use("/api",playlistRoutes)
 try {
   app.listen(5000, () => {
+    console.log(`Listening on port ${5000}`)
     connectDB(process.env.MONGO_URL)
   });
 } catch (error) {
