@@ -15,6 +15,9 @@ app.use(express.json())
 app.use("/api",userRoutes)
 app.use("/api",songRoutes)
 app.use("/api",playlistRoutes)
+app.get("/",(req,res)=>{
+  res.send("hello world")
+})
 try {
   app.listen(5000, () => {
     console.log(`Listening on port ${5000}`)
