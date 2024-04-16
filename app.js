@@ -30,15 +30,17 @@ app.get("/api",(req,res)=>{
 //   const filePath = path.join(__dirname, "6320BFAC2BB0E297C8D6E60A932C5B09.txt");
 //   res.sendFile(filePath);
 // });
-try {
-  app.listen(5000, () => {
-    console.log(`Listening on port ${5000}`)
-    connectDB(process.env.MONGO_URL)
-  });
-} catch (error) {
-    console.log(error);
-}
+// try {
+//   app.listen(5000, () => {
+//     console.log(`Listening on port ${5000}`)
+//     connectDB(process.env.MONGO_URL)
+//   });
+// } catch (error) {
+//     console.log(error);
+// }
 
-
-const httpsserver=https.createServer(cred,app);
-httpsserver.listen(8443)
+const httpsserver = https.createServer(cred, app);
+httpsserver.listen(8443, () => {
+  console.log(`HTTPS server listening on port 8443`);
+  connectDB(process.env.MONGO_URL);
+});
