@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const connectDB=require("./config/connectDB")
 const PORT = process.env.PORT || 5000;
+const fs=require("fs")
+const file=fs.readFileSync("./6320BFAC2BB0E297C8D6E60A932C5B09.txt")
 const dotenv=require("dotenv")
 const userRoutes=require("./routes/userRoutes")
 const jwtpassport=require("./config/jwtpassportauth")
@@ -15,6 +17,9 @@ app.use(express.json())
 app.use("/api",userRoutes)
 app.use("/api",songRoutes)
 app.use("/api",playlistRoutes)
+app.get("/.well-known/pki-validation/6320BFAC2BB0E297C8D6E60A932C5B09.txt",(req,res)=>{
+  res.sendFile("./6320BFAC2BB0E297C8D6E60A932C5B09.txt")
+})
 try {
   app.listen(PORT, () => {
     connectDB(process.env.MONGO_URL)
