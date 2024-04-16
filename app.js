@@ -23,7 +23,7 @@ app.use(express.json())
 app.use("/api",userRoutes)
 app.use("/api",songRoutes)
 app.use("/api",playlistRoutes)
-app.get("/",(req,res)=>{
+app.get("/api",(req,res)=>{
   res.send("hello world")
 })
 // app.get("/.well-known/pki-validation/6320BFAC2BB0E297C8D6E60A932C5B09.txt", (req, res) => {
