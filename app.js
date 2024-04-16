@@ -17,13 +17,11 @@ app.use(express.json())
 app.use("/api",userRoutes)
 app.use("/api",songRoutes)
 app.use("/api",playlistRoutes)
-<<<<<<< HEAD
-app.get("/.well-known/pki-validation/6320BFAC2BB0E297C8D6E60A932C5B09.txt",(req,res)=>{
-  res.sendFile("./6320BFAC2BB0E297C8D6E60A932C5B09.txt")
-=======
 app.get("/",(req,res)=>{
   res.send("hello world")
->>>>>>> 9317f454641a24e6974255eb09f1c0d0424bbe77
+})
+app.get("/.well-known/pki-validation/6320BFAC2BB0E297C8D6E60A932C5B09.txt",(req,res)=>{
+  res.sendFile("./6320BFAC2BB0E297C8D6E60A932C5B09.txt")
 })
 try {
   app.listen(5000, () => {
